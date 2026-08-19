@@ -7,11 +7,13 @@ The objective was not only to maximize predictive performance, but also to under
 ## Executive Summary
 
 Models evaluated:
-
 - Logistic Regression
 - Random Forest
 - Deep Neural Network (DNN)
 - Autoencoder
+
+Additional analysis:
+- Threshold optimization demonstrated that model performance depends not only on model selection but also on the chosen decision threshold
 
 Key findings:
 
@@ -40,6 +42,7 @@ The challenge is to identify fraudulent transactions while minimizing false alar
 5. Deep Neural Network
 6. Autoencoder Anomaly Detection
 7. Model Comparison and Evaluation
+8. Threshold Optimization
 
 ## Results
 | Model | Precision | Recall | F1 | ROC-AUC |
@@ -67,6 +70,16 @@ a Precision of 0.96, an F1-Score of 0.83 and a ROC-AUC of 0.9663.
 
 The deep learning models were developed and evaluated in Google Colab to take advantage of a cloud-based machine learning environment.
 
+### Threshold Optimization
+
+After identifying Random Forest as the best-performing model, an additional threshold optimization study was conducted.
+
+The default threshold of 0.5 achieved the highest precision (0.96) with only 3 false positive predictions.
+
+A threshold of 0.3 achieved the highest F1-Score (0.84) while detecting more fraudulent transactions.
+
+This analysis demonstrated that threshold selection can be as important as model selection itself and should be aligned with the business objective.
+
 ## Lessons Learned
 
 This project demonstrated that:
@@ -75,6 +88,7 @@ This project demonstrated that:
 - Evaluation metrics must be chosen carefully for imbalanced datasets
 - Model interpretability and false positive rates are critical in fraud detection
 - Random Forest remains a strong benchmark for structured tabular data
+- Decision threshold selection can be as important as model selection itself
 
 ## Technologies Used
 
